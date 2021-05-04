@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+div.a {
+  width: auto;
+  border: 1px solid black;
+}
+</style>
+<head>
+  <title>Detecting Spaces Between Products</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<body style="background-color:PaleTurquoise;">
+
+
+<div class="container p-3 mb-2 bg-info text-white">
+  <br>
+  <br>
+  
+  <h1>Detecting Spaces Between Products</h1>
+
+
+  
+
+<div class="container">
+  <form class="form-inline" action="http://127.0.0.1:5000" method = "POST"
+  enctype = "multipart/form-data">
+<br>
+    <div class="form-group">
+      <label for="file">File:</label>
+      <input type="file" class="form-control" id="file" name="file" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Predict</button>
+
+    <a href="http://127.0.0.1:5000"><button class="btn btn-primary">REFRESH</button></a>
+
+  </form>
+  </div>
+<br>
+      
+        {% if select_cat %}
+        <br>
+          <br>
+            <br>
+          <br>
+          <div>
+         {% for filename in filenames %}
+         <div>
+        <img src={{ url_for('static', filename = filename)}} alt="Chart" height="75%" width="75%">
+        {% endfor %}
+         </div>
+
+      {% endif %}
+
+	
+</div>
+</body>
+</html>
